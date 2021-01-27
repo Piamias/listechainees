@@ -5,11 +5,39 @@
 
 void delCharAll(t_list **list, char *str)
 {
-	int test;
+	t_list *tmp;
+	t_list *del;
 
-	test =0;
-	while (test != 1)
+	tmp = *list;
+	del = NULL;
+	if (!(*list))
 	{
-		test = delChar(list, str);
-	}		
-}		
+		printf("\nLa liste est deja vide\n");
+		return ;
+	}
+	while (tmp->next->next != NULL)
+	{
+		if (strcmp(tmp->next->str, str) == 0)
+		{
+			del = tmp->next;
+			tmp->next = tmp->next->next;
+			free(del);
+		}
+		else		
+		{
+			tmp = tmp->next;
+		}
+	}	
+	if (strcmp((*list)->str, str) == 0)
+	{
+		del = *list;
+		*list = (*list)->next;
+		free(del);		
+	}
+	if (strcmp(tmp->next->str, str) == 0)
+	{
+		del = tmp->next;
+		tmp->next = NULL;
+		free(del);
+	}	
+}	

@@ -3,7 +3,7 @@
 #include <string.h>
 #include "list.h"
 
-int delChar(t_list **list, char *str)
+void delChar(t_list **list, char *str)
 {
 	t_list *tmp;
 	t_list *del;
@@ -13,7 +13,7 @@ int delChar(t_list **list, char *str)
 	if (!(*list))
 	{
 		printf("\nLa liste est deja vide\n");
-		return 1;
+		return ;
 	}
 	if (!(*list)->next)
 	{
@@ -21,12 +21,12 @@ int delChar(t_list **list, char *str)
 		{
 			free(*list);
 			(*list)->next = NULL;
-			return 0;
+			return ;
 		}
 		else
 		{
 //			printf("\nAucune valeur trouve 1\n");
-			return 1;
+			return ;
 		}
 	}
 //	printf("\nOn est devant la boucle\n");
@@ -36,7 +36,7 @@ int delChar(t_list **list, char *str)
 	{
 		(*list) = tmp->next;
 		free(tmp);
-		return 0;
+		return ;
 	}		
 	while (strcmp(tmp->next->str, str) != 0)
 	{
@@ -44,7 +44,7 @@ int delChar(t_list **list, char *str)
 		if (tmp->next->next == NULL)
 		{
 //			printf("\nAucune valeur trouve 2\n");
-			return 1;
+			return ;
 		}
 		tmp = tmp->next;		
 	}
@@ -52,5 +52,5 @@ int delChar(t_list **list, char *str)
 	del = tmp->next;
 	tmp->next = tmp->next->next;
 	free(del);		
-	return 0;
+	return ;
 }		

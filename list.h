@@ -18,7 +18,7 @@ void delAtFirst(t_list **list);
 
 void delAtEnd(t_list **list);
 
-int delChar(t_list **list, char *str);
+void delChar(t_list **list, char *str);
 
 void delCharAll(t_list **list, char *str);
 

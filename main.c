@@ -8,7 +8,7 @@ int main(void)
 	t_list *list;
 
 	list = NULL;
-	delCharAll(&list, "tutu");
+	delCharAll(&list, "test");
 	delAtFirst(&list);
 	delAtEnd(&list);
 	delChar(&list, "tata");
@@ -43,17 +43,15 @@ int main(void)
 	printList(list);
 	addAtFirst(&list, "tautau");
 	printList(list);
+	addAtFirst(&list, "tautau");
+	addAtFirst(&list, "tautau");
+	addAtFirst(&list, "tautau");
+	addAtFirst(&list, "tautau");
+	addAtFirst(&list, "tautau");
+	addAtEnd(&list, "tautau");
 	delCharAll(&list, "tautau");
 	printList(list);
-	addAtFirst(&list, "tautau");
-	addAtFirst(&list, "tautau");
-	addAtFirst(&list, "tautau");
-	addAtFirst(&list, "tautau");
-	addAtFirst(&list, "tautau");
-	printList(list);
-	delCharAll(&list, "tautau");
-	printList(list);
-	delCharAll(&list, "totau");
+	delCharAll(&list, "test");
 	printList(list);
 }		
 
